@@ -1,0 +1,57 @@
+{
+  "contributions": {
+    "topicContributions": [
+      {
+        "payload": {
+          "appId": "cad-play",
+          "computersJson": "{\"modelDefinitionIds\":[\"spatial.shape\"],\"statComputers\":[\"spatial.shape.geometry\"],\"propertyComputers\":[\"spatial.shape.volume\"],\"importProfiles\":[],\"transformationAppliers\":[]}",
+          "iconId": "box",
+          "label": "Spatial Shape",
+          "moduleId": "spatial-shape"
+        },
+        "topic": "cad.computer"
+      }
+    ]
+  },
+  "descriptorVersion": 1,
+  "execution": "declarative",
+  "executionProtocol": {
+    "appChannelVersion": 17
+  },
+  "hashes": {
+    "coreWasmSha256": "4b82cd13c4ef7ba1d59f6f5ccf4d609c9a1de7d030645a7b8c87a52e406bdc0d",
+    "descriptorSha256": "3c2d2887119950ef6563732a2fc97e5b3d1aa9408369213ca477814604e0ce96",
+    "wasmSha256": "fbeffe7ab20f7bfdd7b527ae483a975092350d6ed0a3ed6b9df86d46cce3bdb7"
+  },
+  "manifest": {
+    "apps": [],
+    "artifactKinds": [],
+    "capabilities": [],
+    "commands": [],
+    "dependencies": [
+      {
+        "pluginId": "cad",
+        "version": "*"
+      }
+    ],
+    "examples": [],
+    "label": "CAD Spatial Shape",
+    "pluginId": "cad-extension-spatial-shape",
+    "topicContributions": [
+      {
+        "payload": {
+          "appId": "cad-play",
+          "computersJson": "{\"modelDefinitionIds\":[\"spatial.shape\"],\"statComputers\":[\"spatial.shape.geometry\"],\"propertyComputers\":[\"spatial.shape.volume\"],\"importProfiles\":[],\"transformationAppliers\":[]}",
+          "iconId": "box",
+          "label": "Spatial Shape",
+          "moduleId": "spatial-shape"
+        },
+        "topic": "cad.computer"
+      }
+    ],
+    "version": "0.1.0"
+  },
+  "packageId": "semio:cad-extension-spatial-shape",
+  "quotas": {},
+  "role": "extension"
+}

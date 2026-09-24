@@ -1,0 +1,59 @@
+{
+  "contributions": {
+    "topicContributions": [
+      {
+        "payload": {
+          "appId": "sourcing-curation",
+          "iconId": "window",
+          "kindsJson": "[{\"id\":\"window-casement-100x120\",\"name\":\"Casement Window 100×120\",\"moduleId\":\"windows\",\"typologyPath\":[\"windows\",\"casement\"],\"availability\":18,\"geometry\":{\"kind\":\"frame\",\"width\":1.0,\"height\":1.2,\"depth\":0.08,\"profile\":0.08}},{\"id\":\"window-fixed-150x150\",\"name\":\"Fixed Window 150×150\",\"moduleId\":\"windows\",\"typologyPath\":[\"windows\",\"fixed\"],\"availability\":10,\"geometry\":{\"kind\":\"frame\",\"width\":1.5,\"height\":1.5,\"depth\":0.06,\"profile\":0.06}},{\"id\":\"window-tilt-turn-120x140\",\"name\":\"Tilt & Turn Window 120×140\",\"moduleId\":\"windows\",\"typologyPath\":[\"windows\",\"tilt-turn\"],\"availability\":14,\"geometry\":{\"kind\":\"frame\",\"width\":1.2,\"height\":1.4,\"depth\":0.09,\"profile\":0.09}}]",
+          "label": "Windows",
+          "moduleId": "windows",
+          "typologyJson": "{\"id\":\"windows\",\"label\":\"Windows\",\"children\":[{\"id\":\"casement\",\"label\":\"Casement\"},{\"id\":\"fixed\",\"label\":\"Fixed\"},{\"id\":\"tilt-turn\",\"label\":\"Tilt & Turn\"}]}"
+        },
+        "topic": "sourcing.module"
+      }
+    ]
+  },
+  "descriptorVersion": 1,
+  "execution": "declarative",
+  "executionProtocol": {
+    "appChannelVersion": 17
+  },
+  "hashes": {
+    "coreWasmSha256": "9f30680a1921707966d3b15db161b3c983008feaeb890229fd3dd1de7fc1117a",
+    "descriptorSha256": "fee3ab582caa84be208ef0afbfd6f26876256be7cf11b75df4687ca59c078aba",
+    "wasmSha256": "9c70c223c4a67162fbf6f1be2d3ddb2b1cdd2e6f06af15f399cbeea5af20aa6b"
+  },
+  "manifest": {
+    "apps": [],
+    "artifactKinds": [],
+    "capabilities": [],
+    "commands": [],
+    "dependencies": [
+      {
+        "pluginId": "sourcing",
+        "version": "*"
+      }
+    ],
+    "examples": [],
+    "label": "Sourcing Module Windows",
+    "pluginId": "sourcing-module-windows",
+    "topicContributions": [
+      {
+        "payload": {
+          "appId": "sourcing-curation",
+          "iconId": "window",
+          "kindsJson": "[{\"id\":\"window-casement-100x120\",\"name\":\"Casement Window 100×120\",\"moduleId\":\"windows\",\"typologyPath\":[\"windows\",\"casement\"],\"availability\":18,\"geometry\":{\"kind\":\"frame\",\"width\":1.0,\"height\":1.2,\"depth\":0.08,\"profile\":0.08}},{\"id\":\"window-fixed-150x150\",\"name\":\"Fixed Window 150×150\",\"moduleId\":\"windows\",\"typologyPath\":[\"windows\",\"fixed\"],\"availability\":10,\"geometry\":{\"kind\":\"frame\",\"width\":1.5,\"height\":1.5,\"depth\":0.06,\"profile\":0.06}},{\"id\":\"window-tilt-turn-120x140\",\"name\":\"Tilt & Turn Window 120×140\",\"moduleId\":\"windows\",\"typologyPath\":[\"windows\",\"tilt-turn\"],\"availability\":14,\"geometry\":{\"kind\":\"frame\",\"width\":1.2,\"height\":1.4,\"depth\":0.09,\"profile\":0.09}}]",
+          "label": "Windows",
+          "moduleId": "windows",
+          "typologyJson": "{\"id\":\"windows\",\"label\":\"Windows\",\"children\":[{\"id\":\"casement\",\"label\":\"Casement\"},{\"id\":\"fixed\",\"label\":\"Fixed\"},{\"id\":\"tilt-turn\",\"label\":\"Tilt & Turn\"}]}"
+        },
+        "topic": "sourcing.module"
+      }
+    ],
+    "version": "0.1.0"
+  },
+  "packageId": "semio:sourcing-module-windows",
+  "quotas": {},
+  "role": "extension"
+}

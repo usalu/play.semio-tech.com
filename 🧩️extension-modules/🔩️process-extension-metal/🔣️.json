@@ -1,0 +1,57 @@
+{
+  "contributions": {
+    "topicContributions": [
+      {
+        "payload": {
+          "appId": "process3d-play",
+          "iconId": "wrench",
+          "label": "Metal",
+          "machinesJson": "[{\"id\":\"chopSaw\",\"label\":\"Chop Saw\",\"iconId\":\"scissors\",\"capabilities\":[{\"id\":\"chop\",\"label\":\"Chop\",\"iconId\":\"scissors\",\"recipe\":{\"recipe\":\"discCut\",\"diameter\":\"bladeDiameter\",\"kerf\":\"kerf\"},\"parameters\":[{\"id\":\"bladeDiameter\",\"label\":\"Blade Diameter\",\"value\":0.355},{\"id\":\"kerf\",\"label\":\"Kerf\",\"value\":0.003},{\"id\":\"maxCutDepth\",\"label\":\"Max Cut Depth\",\"value\":0.12},{\"id\":\"maxStockWidth\",\"label\":\"Max Stock Width\",\"value\":0.23}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"maxCutDepth\",\"margin\":0.0},{\"kind\":\"max\",\"quantity\":\"width\",\"parameter\":\"maxStockWidth\",\"margin\":0.0}]}]},{\"id\":\"angleGrinder\",\"label\":\"Angle Grinder\",\"iconId\":\"scissors\",\"capabilities\":[{\"id\":\"grindCut\",\"label\":\"Grind Cut\",\"iconId\":\"scissors\",\"recipe\":{\"recipe\":\"discCut\",\"diameter\":\"discDiameter\",\"kerf\":\"kerf\"},\"parameters\":[{\"id\":\"discDiameter\",\"label\":\"Disc Diameter\",\"value\":0.125},{\"id\":\"kerf\",\"label\":\"Kerf\",\"value\":0.0025},{\"id\":\"maxCutDepth\",\"label\":\"Max Cut Depth\",\"value\":0.038}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"maxCutDepth\",\"margin\":0.0}]}]},{\"id\":\"pillarDrill\",\"label\":\"Pillar Drill\",\"iconId\":\"circle-dot\",\"capabilities\":[{\"id\":\"bore\",\"label\":\"Bore\",\"iconId\":\"circle-dot\",\"recipe\":{\"recipe\":\"boreDrill\",\"radius\":\"bitRadius\",\"depth\":\"strokeDepth\"},\"parameters\":[{\"id\":\"bitRadius\",\"label\":\"Bit Radius\",\"value\":0.008},{\"id\":\"strokeDepth\",\"label\":\"Stroke Depth\",\"value\":0.08}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"strokeDepth\",\"margin\":0.0}]}]},{\"id\":\"magDrill\",\"label\":\"Mag Drill\",\"iconId\":\"magnet\",\"capabilities\":[{\"id\":\"annularBore\",\"label\":\"Annular Bore\",\"iconId\":\"magnet\",\"recipe\":{\"recipe\":\"boreDrill\",\"radius\":\"bitRadius\",\"depth\":\"cutterLength\"},\"parameters\":[{\"id\":\"bitRadius\",\"label\":\"Bit Radius\",\"value\":0.017},{\"id\":\"cutterLength\",\"label\":\"Cutter Length\",\"value\":0.05},{\"id\":\"minPlateThickness\",\"label\":\"Min Plate Thickness\",\"value\":0.006}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"cutterLength\",\"margin\":0.0},{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minPlateThickness\",\"margin\":0.0}]}]},{\"id\":\"plasmaCutter\",\"label\":\"Plasma Cutter\",\"iconId\":\"sparkles\",\"capabilities\":[{\"id\":\"plasmaCut\",\"label\":\"Plasma Cut\",\"iconId\":\"sparkles\",\"recipe\":{\"recipe\":\"bladeCut\",\"kerf\":\"kerf\",\"length\":\"cutLength\",\"depth\":\"maxCutThickness\"},\"parameters\":[{\"id\":\"kerf\",\"label\":\"Kerf\",\"value\":0.0015},{\"id\":\"cutLength\",\"label\":\"Cut Length\",\"value\":1.5},{\"id\":\"maxCutThickness\",\"label\":\"Max Cut Thickness\",\"value\":0.02}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"maxCutThickness\",\"margin\":0.0}]}]},{\"id\":\"migWelder\",\"label\":\"MIG Welder\",\"iconId\":\"combine\",\"capabilities\":[{\"id\":\"weldBead\",\"label\":\"Weld Bead\",\"iconId\":\"combine\",\"recipe\":{\"recipe\":\"cylinderAttach\",\"radius\":\"beadRadius\",\"length\":\"beadLength\"},\"parameters\":[{\"id\":\"beadRadius\",\"label\":\"Bead Radius\",\"value\":0.004},{\"id\":\"beadLength\",\"label\":\"Bead Length\",\"value\":0.05},{\"id\":\"minThickness\",\"label\":\"Min Thickness\",\"value\":0.0008}],\"rules\":[{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minThickness\",\"margin\":0.0}]},{\"id\":\"weldPlate\",\"label\":\"Weld Plate\",\"iconId\":\"combine\",\"recipe\":{\"recipe\":\"boxAttach\",\"width\":\"plateWidth\",\"depth\":\"plateDepth\",\"height\":\"plateThickness\"},\"parameters\":[{\"id\":\"plateWidth\",\"label\":\"Plate Width\",\"value\":0.1},{\"id\":\"plateDepth\",\"label\":\"Plate Depth\",\"value\":0.1},{\"id\":\"plateThickness\",\"label\":\"Plate Thickness\",\"value\":0.008},{\"id\":\"minThickness\",\"label\":\"Min Thickness\",\"value\":0.0008}],\"rules\":[{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minThickness\",\"margin\":0.0}]}]},{\"id\":\"studWelder\",\"label\":\"Stud Welder\",\"iconId\":\"plug\",\"capabilities\":[{\"id\":\"stud\",\"label\":\"Stud\",\"iconId\":\"plug\",\"recipe\":{\"recipe\":\"cylinderAttach\",\"radius\":\"studRadius\",\"length\":\"studLength\"},\"parameters\":[{\"id\":\"studRadius\",\"label\":\"Stud Radius\",\"value\":0.005},{\"id\":\"studLength\",\"label\":\"Stud Length\",\"value\":0.025},{\"id\":\"minThickness\",\"label\":\"Min Thickness\",\"value\":0.002}],\"rules\":[{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minThickness\",\"margin\":0.0}]}]}]",
+          "moduleId": "metal"
+        },
+        "topic": "process.machines"
+      }
+    ]
+  },
+  "descriptorVersion": 1,
+  "execution": "declarative",
+  "executionProtocol": {
+    "appChannelVersion": 17
+  },
+  "hashes": {
+    "coreWasmSha256": "86f2acb54bd1cb9d4117b0fca6d4f752494e579bbfa4c5350d62880f3d6aeb99",
+    "descriptorSha256": "3edbdddd991f6a90bb74850197875693ed7d6ad5343703fee134b7904cb937a1",
+    "wasmSha256": "c85133f943beb2346a5377905e9fd34883fd8b55ec343a244f60a7e0b7e29caf"
+  },
+  "manifest": {
+    "apps": [],
+    "artifactKinds": [],
+    "capabilities": [],
+    "commands": [],
+    "dependencies": [
+      {
+        "pluginId": "process",
+        "version": "*"
+      }
+    ],
+    "examples": [],
+    "label": "Process Metal Machines",
+    "pluginId": "process-extension-metal",
+    "topicContributions": [
+      {
+        "payload": {
+          "appId": "process3d-play",
+          "iconId": "wrench",
+          "label": "Metal",
+          "machinesJson": "[{\"id\":\"chopSaw\",\"label\":\"Chop Saw\",\"iconId\":\"scissors\",\"capabilities\":[{\"id\":\"chop\",\"label\":\"Chop\",\"iconId\":\"scissors\",\"recipe\":{\"recipe\":\"discCut\",\"diameter\":\"bladeDiameter\",\"kerf\":\"kerf\"},\"parameters\":[{\"id\":\"bladeDiameter\",\"label\":\"Blade Diameter\",\"value\":0.355},{\"id\":\"kerf\",\"label\":\"Kerf\",\"value\":0.003},{\"id\":\"maxCutDepth\",\"label\":\"Max Cut Depth\",\"value\":0.12},{\"id\":\"maxStockWidth\",\"label\":\"Max Stock Width\",\"value\":0.23}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"maxCutDepth\",\"margin\":0.0},{\"kind\":\"max\",\"quantity\":\"width\",\"parameter\":\"maxStockWidth\",\"margin\":0.0}]}]},{\"id\":\"angleGrinder\",\"label\":\"Angle Grinder\",\"iconId\":\"scissors\",\"capabilities\":[{\"id\":\"grindCut\",\"label\":\"Grind Cut\",\"iconId\":\"scissors\",\"recipe\":{\"recipe\":\"discCut\",\"diameter\":\"discDiameter\",\"kerf\":\"kerf\"},\"parameters\":[{\"id\":\"discDiameter\",\"label\":\"Disc Diameter\",\"value\":0.125},{\"id\":\"kerf\",\"label\":\"Kerf\",\"value\":0.0025},{\"id\":\"maxCutDepth\",\"label\":\"Max Cut Depth\",\"value\":0.038}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"maxCutDepth\",\"margin\":0.0}]}]},{\"id\":\"pillarDrill\",\"label\":\"Pillar Drill\",\"iconId\":\"circle-dot\",\"capabilities\":[{\"id\":\"bore\",\"label\":\"Bore\",\"iconId\":\"circle-dot\",\"recipe\":{\"recipe\":\"boreDrill\",\"radius\":\"bitRadius\",\"depth\":\"strokeDepth\"},\"parameters\":[{\"id\":\"bitRadius\",\"label\":\"Bit Radius\",\"value\":0.008},{\"id\":\"strokeDepth\",\"label\":\"Stroke Depth\",\"value\":0.08}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"strokeDepth\",\"margin\":0.0}]}]},{\"id\":\"magDrill\",\"label\":\"Mag Drill\",\"iconId\":\"magnet\",\"capabilities\":[{\"id\":\"annularBore\",\"label\":\"Annular Bore\",\"iconId\":\"magnet\",\"recipe\":{\"recipe\":\"boreDrill\",\"radius\":\"bitRadius\",\"depth\":\"cutterLength\"},\"parameters\":[{\"id\":\"bitRadius\",\"label\":\"Bit Radius\",\"value\":0.017},{\"id\":\"cutterLength\",\"label\":\"Cutter Length\",\"value\":0.05},{\"id\":\"minPlateThickness\",\"label\":\"Min Plate Thickness\",\"value\":0.006}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"cutterLength\",\"margin\":0.0},{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minPlateThickness\",\"margin\":0.0}]}]},{\"id\":\"plasmaCutter\",\"label\":\"Plasma Cutter\",\"iconId\":\"sparkles\",\"capabilities\":[{\"id\":\"plasmaCut\",\"label\":\"Plasma Cut\",\"iconId\":\"sparkles\",\"recipe\":{\"recipe\":\"bladeCut\",\"kerf\":\"kerf\",\"length\":\"cutLength\",\"depth\":\"maxCutThickness\"},\"parameters\":[{\"id\":\"kerf\",\"label\":\"Kerf\",\"value\":0.0015},{\"id\":\"cutLength\",\"label\":\"Cut Length\",\"value\":1.5},{\"id\":\"maxCutThickness\",\"label\":\"Max Cut Thickness\",\"value\":0.02}],\"rules\":[{\"kind\":\"max\",\"quantity\":\"height\",\"parameter\":\"maxCutThickness\",\"margin\":0.0}]}]},{\"id\":\"migWelder\",\"label\":\"MIG Welder\",\"iconId\":\"combine\",\"capabilities\":[{\"id\":\"weldBead\",\"label\":\"Weld Bead\",\"iconId\":\"combine\",\"recipe\":{\"recipe\":\"cylinderAttach\",\"radius\":\"beadRadius\",\"length\":\"beadLength\"},\"parameters\":[{\"id\":\"beadRadius\",\"label\":\"Bead Radius\",\"value\":0.004},{\"id\":\"beadLength\",\"label\":\"Bead Length\",\"value\":0.05},{\"id\":\"minThickness\",\"label\":\"Min Thickness\",\"value\":0.0008}],\"rules\":[{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minThickness\",\"margin\":0.0}]},{\"id\":\"weldPlate\",\"label\":\"Weld Plate\",\"iconId\":\"combine\",\"recipe\":{\"recipe\":\"boxAttach\",\"width\":\"plateWidth\",\"depth\":\"plateDepth\",\"height\":\"plateThickness\"},\"parameters\":[{\"id\":\"plateWidth\",\"label\":\"Plate Width\",\"value\":0.1},{\"id\":\"plateDepth\",\"label\":\"Plate Depth\",\"value\":0.1},{\"id\":\"plateThickness\",\"label\":\"Plate Thickness\",\"value\":0.008},{\"id\":\"minThickness\",\"label\":\"Min Thickness\",\"value\":0.0008}],\"rules\":[{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minThickness\",\"margin\":0.0}]}]},{\"id\":\"studWelder\",\"label\":\"Stud Welder\",\"iconId\":\"plug\",\"capabilities\":[{\"id\":\"stud\",\"label\":\"Stud\",\"iconId\":\"plug\",\"recipe\":{\"recipe\":\"cylinderAttach\",\"radius\":\"studRadius\",\"length\":\"studLength\"},\"parameters\":[{\"id\":\"studRadius\",\"label\":\"Stud Radius\",\"value\":0.005},{\"id\":\"studLength\",\"label\":\"Stud Length\",\"value\":0.025},{\"id\":\"minThickness\",\"label\":\"Min Thickness\",\"value\":0.002}],\"rules\":[{\"kind\":\"min\",\"quantity\":\"height\",\"parameter\":\"minThickness\",\"margin\":0.0}]}]}]",
+          "moduleId": "metal"
+        },
+        "topic": "process.machines"
+      }
+    ],
+    "version": "0.1.0"
+  },
+  "packageId": "semio:process-extension-metal",
+  "quotas": {},
+  "role": "extension"
+}
