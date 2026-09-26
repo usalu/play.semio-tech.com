@@ -1,4 +1,4 @@
-const __semioPageOrigins = {"/osm":"https://map.assets.semio-tech.com","/vt":"https://map.assets.semio-tech.com","/dem":"https://map.assets.semio-tech.com","/mesh":"https://media.assets.semio-tech.com","/cad-assets":"https://media.assets.semio-tech.com","/infinite-assets":"https://media.assets.semio-tech.com","/🖼️assets":"https://media.assets.semio-tech.com"};
+const __semioPageOrigins = {"/osm":"https://map.assets.semio-tech.com","/vt":"https://map.assets.semio-tech.com","/dem":"https://map.assets.semio-tech.com","/mesh":"https://media.assets.semio-tech.com","/cad-assets":"https://media.assets.semio-tech.com","/infinite-assets":"https://media.assets.semio-tech.com","/🖼️assets":"https://media.assets.semio-tech.com","/🔌️plugin-modules":"https://modules.assets.semio-tech.com","/🧩️extension-modules":"https://modules.assets.semio-tech.com"};
 const __semioNativeFetch = globalThis.fetch.bind(globalThis);
 function __semioRelocate(url) {
   let path = url;
