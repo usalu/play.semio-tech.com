@@ -262,9 +262,9 @@
     "appChannelVersion": 17
   },
   "hashes": {
-    "coreWasmSha256": "54f3cbba703e468af6645dc7acf97d134b366b254a6ddc728099bac7e8bf3792",
-    "descriptorSha256": "36e32b839421ecd0e6fa11239a0e66a522d958996fd5396d4b43328bbe1207a1",
-    "wasmSha256": "8d937ce8d355a519c94c2dc4877952bef5bb12cff048e8483b3158645ebc3b98"
+    "coreWasmSha256": "e3badb2f0a92d2718f9a19b5215b3ff2136275293f8f5c3eac48604dcafc238a",
+    "descriptorSha256": "5661bfed41e1b5196b856ec98683f6a931ce7ad4bce1a36faf57563dba23f3bc",
+    "wasmSha256": "0d1a9bcd1fba48f1e6da53e73017419919c813feb3052c03bef6432ecdb3f9f9"
   },
   "manifest": {
     "apps": [
@@ -1604,9 +1604,6 @@
             "exportFormats": [],
             "exportStdioKinds": [
               "stdio.json",
-              "stdio.obj",
-              "stdio.png",
-              "stdio.stl",
               "stdio.txt",
               "stdio.zip"
             ],
@@ -1614,9 +1611,6 @@
             "importFormats": [],
             "importStdioKinds": [
               "stdio.json",
-              "stdio.obj",
-              "stdio.png",
-              "stdio.stl",
               "stdio.txt",
               "stdio.zip"
             ],
@@ -2219,11 +2213,11 @@
                 "kind": "interaction",
                 "label": {
                   "native": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   },
                   "reuse": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   }
                 },
@@ -5678,9 +5672,6 @@
             "exportFormats": [],
             "exportStdioKinds": [
               "stdio.json",
-              "stdio.obj",
-              "stdio.png",
-              "stdio.stl",
               "stdio.txt",
               "stdio.zip"
             ],
@@ -5688,9 +5679,6 @@
             "importFormats": [],
             "importStdioKinds": [
               "stdio.json",
-              "stdio.obj",
-              "stdio.png",
-              "stdio.stl",
               "stdio.txt",
               "stdio.zip"
             ],
@@ -6324,11 +6312,11 @@
                 "kind": "interaction",
                 "label": {
                   "native": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   },
                   "reuse": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   }
                 },
@@ -9028,9 +9016,6 @@
             "exportFormats": [],
             "exportStdioKinds": [
               "stdio.json",
-              "stdio.obj",
-              "stdio.png",
-              "stdio.stl",
               "stdio.txt",
               "stdio.zip"
             ],
@@ -9038,9 +9023,6 @@
             "importFormats": [],
             "importStdioKinds": [
               "stdio.json",
-              "stdio.obj",
-              "stdio.png",
-              "stdio.stl",
               "stdio.txt",
               "stdio.zip"
             ],
@@ -9654,11 +9636,11 @@
                 "kind": "interaction",
                 "label": {
                   "native": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   },
                   "reuse": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   }
                 },
@@ -10281,11 +10263,11 @@
                 "kind": "interaction",
                 "label": {
                   "native": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   },
                   "reuse": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   }
                 },

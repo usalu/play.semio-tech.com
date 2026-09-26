@@ -1,3 +1,26 @@
+const __semioPageOrigins = {"/osm":"https://map.assets.semio-tech.com","/vt":"https://map.assets.semio-tech.com","/dem":"https://map.assets.semio-tech.com","/mesh":"https://media.assets.semio-tech.com","/cad-assets":"https://media.assets.semio-tech.com","/infinite-assets":"https://media.assets.semio-tech.com","/🖼️assets":"https://media.assets.semio-tech.com"};
+const __semioNativeFetch = globalThis.fetch.bind(globalThis);
+function __semioRelocate(url) {
+  let path = url;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(url)) {
+    let parsed;
+    try { parsed = new URL(url); } catch { return url; }
+    if (parsed.origin !== self.location.origin) return url;
+    path = parsed.pathname + parsed.search + parsed.hash;
+  }
+  const key = Object.keys(__semioPageOrigins).sort((a, b) => b.length - a.length).find((prefix) => path === prefix || path.startsWith(prefix + "/"));
+  return key ? __semioPageOrigins[key].replace(/\/$/, "") + path : url;
+}
+globalThis.fetch = (input, init) => {
+  if (typeof Request !== "undefined" && input instanceof Request) {
+    if (input.method !== "GET" && input.method !== "HEAD") return __semioNativeFetch(input, init);
+    const next = __semioRelocate(input.url);
+    return next === input.url ? __semioNativeFetch(input, init) : __semioNativeFetch(new Request(next, input), init);
+  }
+  const raw = typeof input === "string" ? input : input instanceof URL ? input.href : "";
+  const next = raw ? __semioRelocate(raw) : "";
+  return __semioNativeFetch(next || input, init);
+};
 /** @generated semio shard worker (H2 — bounded pool, actorId-multiplexed) */
 // 🩺️ SHARED-PRESENCE-SESSION-COLORS-AND-UNIVERSAL-ARTIFACT-CREATION (1-B): raise the captured-frame
 // cap BEFORE anything else runs so a deep guest recursion's real stack survives `error.stack`

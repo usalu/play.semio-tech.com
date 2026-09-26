@@ -10646,6 +10646,226 @@ async function applyOps(arg0, arg1, arg2) {
   });
   
 }
+let codec100ReplayEnvelopes;
+
+async function replayEnvelopes(arg0, arg1, arg2) {
+  
+  const hostProvided = false;
+  getOrCreateAsyncState(0).throwIfTrapped();
+  
+  const [task, _wasm_call_currentTaskID] = createNewCurrentTask({
+    componentIdx: 0,
+    isAsync: true,
+    isManualAsync: false,
+    preserveFutureResult: false,
+    entryFnName: 'codec100ReplayEnvelopes',
+    getCallbackFn: () => callback_0,
+    callbackFnName: callback_0,
+    errHandling: 'throw-result-err',
+    callingWasmExport: true,
+  });
+  task.setCalleeIsAsync(true);
+  
+  
+  const started = await task.enter();
+  if (!started) {
+    _debugLog('[Instruction::AsyncTaskReturn] failed to enter task', {
+      taskID: task.id(),
+      subtaskID: task.currentSubtask()?.id(),
+    });
+    throw new Error("failed to enter task");
+  }
+  
+  CURRENT_TASK_MAY_BLOCK.value = task.mayBlock() ? 1 : 0;
+  
+  if (0!== null) {
+    task.setReturnMemoryIdx(0);
+    task.setReturnMemory((() => memory0)());
+  }
+  
+  
+  return await _withGlobalCurrentTaskMetaAsync({
+    taskID: task.id(),
+    componentIdx: task.componentIdx(),
+    fn: async () => {
+      try {
+        
+        
+        var encodeRes = await _utf8AllocateAndEncodeAsync(arg0, realloc0Async, memory0);
+        var ptr0= encodeRes.ptr;
+        var len0 = encodeRes.len;
+        
+        var {pack: v1_0, spr: v1_1 } = arg1;
+        var val2 = v1_0;
+        var len2 = Array.isArray(val2) ? val2.length : val2.byteLength;
+        var ptr2 = await realloc0Async(0, 0, 1, len2 * 1);
+        
+        let valData2;
+        const valLenBytes2 = len2 * 1;
+        if (Array.isArray(val2)) {
+          // Regular array likely containing numbers, write values to memory
+          let offset = 0;
+          const dv2 = new DataView(memory0.buffer);
+          for (const v of val2) {
+            _requireValidNumericPrimitive.bind(null, 'u8')(v);
+            dv2.setUint8(ptr2+ offset, v, true);
+            offset += 1;
+          }
+        } else {
+          // TypedArray / ArrayBuffer-like, direct copy
+          valData2 = new Uint8Array(val2.buffer || val2, val2.byteOffset, valLenBytes2);
+          const out2 = new Uint8Array(memory0.buffer, ptr2, valLenBytes2);
+          out2.set(valData2);
+        }
+        
+        var val3 = v1_1;
+        var len3 = Array.isArray(val3) ? val3.length : val3.byteLength;
+        var ptr3 = await realloc0Async(0, 0, 1, len3 * 1);
+        
+        let valData3;
+        const valLenBytes3 = len3 * 1;
+        if (Array.isArray(val3)) {
+          // Regular array likely containing numbers, write values to memory
+          let offset = 0;
+          const dv3 = new DataView(memory0.buffer);
+          for (const v of val3) {
+            _requireValidNumericPrimitive.bind(null, 'u8')(v);
+            dv3.setUint8(ptr3+ offset, v, true);
+            offset += 1;
+          }
+        } else {
+          // TypedArray / ArrayBuffer-like, direct copy
+          valData3 = new Uint8Array(val3.buffer || val3, val3.byteOffset, valLenBytes3);
+          const out3 = new Uint8Array(memory0.buffer, ptr3, valLenBytes3);
+          out3.set(valData3);
+        }
+        
+        var val4 = arg2;
+        var len4 = Array.isArray(val4) ? val4.length : val4.byteLength;
+        var ptr4 = await realloc0Async(0, 0, 1, len4 * 1);
+        
+        let valData4;
+        const valLenBytes4 = len4 * 1;
+        if (Array.isArray(val4)) {
+          // Regular array likely containing numbers, write values to memory
+          let offset = 0;
+          const dv4 = new DataView(memory0.buffer);
+          for (const v of val4) {
+            _requireValidNumericPrimitive.bind(null, 'u8')(v);
+            dv4.setUint8(ptr4+ offset, v, true);
+            offset += 1;
+          }
+        } else {
+          // TypedArray / ArrayBuffer-like, direct copy
+          valData4 = new Uint8Array(val4.buffer || val4, val4.byteOffset, valLenBytes4);
+          const out4 = new Uint8Array(memory0.buffer, ptr4, valLenBytes4);
+          out4.set(valData4);
+        }
+        
+        _debugLog('[iface="semio:framework/codec@1.0.0", function="replay-envelopes"][Instruction::CallWasm] enter', {
+          funcName: 'replay-envelopes',
+          paramCount: 8,
+          async: true,
+          postReturn: false,
+        });
+        
+        let ret;
+        
+        try {
+          ret =  await _withGlobalCurrentTaskMeta({
+            taskID: task.id(),
+            componentIdx: task.componentIdx(),
+            fn: () => codec100ReplayEnvelopes(ptr0, len0, ptr2, len2, ptr3, len3, ptr4, len4),
+          });
+        } catch (err) {
+          
+          _debugLog('[Instruction::CallWasm] error during async call', {
+            taskID: task.id(),
+            err,
+          });
+          getOrCreateAsyncState(0).markTrapped(err);
+          task.setErrored(err);
+          task.reject(err);
+          task.exit();
+          return task.completionPromise();
+          
+        }
+        
+        _debugLog('[iface="semio:framework/codec@1.0.0", function="replay-envelopes"][Instruction::AsyncTaskReturn]', {
+          funcName: 'replay-envelopes',
+          paramCount: 1,
+          componentIdx: 0,
+          postReturn: false,
+          hostProvided,
+        });
+        
+        if (hostProvided) {
+          _debugLog('[Instruction::AsyncTaskReturn] signaling host-provided async return completion', {
+            task: task.id(),
+            subtask: subtask?.id(),
+            result: ret,
+          })
+          task.resolve([ret]);
+          task.exit();
+          return ret;
+        }
+        
+        // An async lift without a callback completes when its core
+        // function returns; there is no callback protocol to drive.
+        if (!task.hasCallback()) {
+          
+          task.resolve([ret]);
+          task.exit();
+          return ret;
+        }
+        
+        const componentState = getOrCreateAsyncState(0);
+        if (!componentState) { throw new Error('failed to lookup current component state'); }
+        
+        queueMicrotask(async (resolve, reject) => {
+          try {
+            _debugLog("[Instruction::AsyncTaskReturn] starting driver loop", {
+              fnName: 'replay-envelopes',
+              componentInstanceIdx: 0,
+              taskID: task.id(),
+            });
+            await _driverLoop({
+              componentInstanceIdx: 0,
+              componentState,
+              task,
+              fnName: 'replay-envelopes',
+              isAsync: true,
+              callbackResult: ret,
+            });
+          } catch (err) {
+            _debugLog("[Instruction::AsyncTaskReturn] driver loop call failure", { err });
+          }
+        });
+        
+        let taskRes = await task.completionPromise();
+        if (task.getErrHandling() === 'throw-result-err') {
+          if (typeof taskRes !== 'object') {
+            return taskRes;
+          }
+          if (taskRes.tag === 'err') { throw new ComponentError(taskRes.val);}
+          if (taskRes.tag === 'ok') { taskRes = taskRes.val; }
+        }
+        
+        return taskRes;
+        
+        
+      } catch (err) {
+        if (!task.isResolvedState()) {
+          task.setErrored(err);
+          task.reject(err);
+        }
+        if (!task.isExited()) { task.exit({ skipExclusiveLockCheck: true }); }
+        throw err;
+      }
+    },
+  });
+  
+}
 let trampoline0 = _trampoline0.manuallyAsync ? new WebAssembly.Suspending(_suspendingImport(0, _lowerImportBackwardsCompat.bind(
 null,
 {
@@ -13687,8 +13907,8 @@ null,
 const $init = (() => {
   let gen = (function* _initGenerator () {
     const module0 = fetchCompile(__semioVersionedComponentAssetUrl('./semio_s_plugin_note_component.core.wasm'));
-    const module1 = base64Compile('AGFzbQEAAAABSwxgAX8AYAR/f39/AGACf38Bf2AEf39/fwBgBH9/f38AYAV/f39/fwBgBX9/f39/AGABfwBgAn9/AGADf39/AGACf38AYAR/f39/AAMaGQABAgMEBQMDBgYGBAcDAwgJCgsKAAAAAAAEBQFwARkZB38aATAAAAExAAEBMgACATMAAwE0AAQBNQAFATYABgE3AAcBOAAIATkACQIxMAAKAjExAAsCMTIADAIxMwANAjE0AA4CMTUADwIxNgAQAjE3ABECMTgAEgIxOQATAjIwABQCMjEAFQIyMgAWAjIzABcCMjQAGAgkaW1wb3J0cwEACt0CGQkAIABBABEAAAsPACAAIAEgAiADQQERAQALCwAgACABQQIRAgALDwAgACABIAIgA0EDEQMACw8AIAAgASACIANBBBEEAAsRACAAIAEgAiADIARBBREFAAsPACAAIAEgAiADQQYRAwALDwAgACABIAIgA0EHEQMACxEAIAAgASACIAMgBEEIEQYACxEAIAAgASACIAMgBEEJEQYACxEAIAAgASACIAMgBEEKEQYACw8AIAAgASACIANBCxEEAAsJACAAQQwRBwALDwAgACABIAIgA0ENEQMACw8AIAAgASACIANBDhEDAAsLACAAIAFBDxEIAAsNACAAIAEgAkEQEQkACwsAIAAgAUEREQoACw8AIAAgASACIANBEhELAAsLACAAIAFBExEKAAsJACAAQRQRAAALCQAgAEEVEQAACwkAIABBFhEAAAsJACAAQRcRAAALCQAgAEEYEQAACwAvCXByb2R1Y2VycwEMcHJvY2Vzc2VkLWJ5AQ13aXQtY29tcG9uZW50BzAuMjUyLjA');
-    const module2 = base64Compile('AGFzbQEAAAABSwxgAX8AYAR/f39/AGACf38Bf2AEf39/fwBgBH9/f38AYAV/f39/fwBgBX9/f39/AGABfwBgAn9/AGADf39/AGACf38AYAR/f39/AAKcARoAATAAAAABMQABAAEyAAIAATMAAwABNAAEAAE1AAUAATYAAwABNwADAAE4AAYAATkABgACMTAABgACMTEABAACMTIABwACMTMAAwACMTQAAwACMTUACAACMTYACQACMTcACgACMTgACwACMTkACgACMjAAAAACMjEAAAACMjIAAAACMjMAAAACMjQAAAAIJGltcG9ydHMBcAEZGQkfAQBBAAsZAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGAAvCXByb2R1Y2VycwEMcHJvY2Vzc2VkLWJ5AQ13aXQtY29tcG9uZW50BzAuMjUyLjA');
+    const module1 = base64Compile('AGFzbQEAAAABSwxgAX8AYAR/f39/AGACf38Bf2AEf39/fwBgBH9/f38AYAV/f39/fwBgBX9/f39/AGABfwBgAn9/AGADf39/AGACf38AYAR/f39/AAMbGgABAgMEBQMDBgYGBAYHAwMICQoLCgAAAAAABAUBcAEaGgeEARsBMAAAATEAAQEyAAIBMwADATQABAE1AAUBNgAGATcABwE4AAgBOQAJAjEwAAoCMTEACwIxMgAMAjEzAA0CMTQADgIxNQAPAjE2ABACMTcAEQIxOAASAjE5ABMCMjAAFAIyMQAVAjIyABYCMjMAFwIyNAAYAjI1ABkIJGltcG9ydHMBAArvAhoJACAAQQARAAALDwAgACABIAIgA0EBEQEACwsAIAAgAUECEQIACw8AIAAgASACIANBAxEDAAsPACAAIAEgAiADQQQRBAALEQAgACABIAIgAyAEQQURBQALDwAgACABIAIgA0EGEQMACw8AIAAgASACIANBBxEDAAsRACAAIAEgAiADIARBCBEGAAsRACAAIAEgAiADIARBCREGAAsRACAAIAEgAiADIARBChEGAAsPACAAIAEgAiADQQsRBAALEQAgACABIAIgAyAEQQwRBgALCQAgAEENEQcACw8AIAAgASACIANBDhEDAAsPACAAIAEgAiADQQ8RAwALCwAgACABQRARCAALDQAgACABIAJBEREJAAsLACAAIAFBEhEKAAsPACAAIAEgAiADQRMRCwALCwAgACABQRQRCgALCQAgAEEVEQAACwkAIABBFhEAAAsJACAAQRcRAAALCQAgAEEYEQAACwkAIABBGREAAAsALwlwcm9kdWNlcnMBDHByb2Nlc3NlZC1ieQENd2l0LWNvbXBvbmVudAcwLjI1Mi4w');
+    const module2 = base64Compile('AGFzbQEAAAABSwxgAX8AYAR/f39/AGACf38Bf2AEf39/fwBgBH9/f38AYAV/f39/fwBgBX9/f39/AGABfwBgAn9/AGADf39/AGACf38AYAR/f39/AAKiARsAATAAAAABMQABAAEyAAIAATMAAwABNAAEAAE1AAUAATYAAwABNwADAAE4AAYAATkABgACMTAABgACMTEABAACMTIABgACMTMABwACMTQAAwACMTUAAwACMTYACAACMTcACQACMTgACgACMTkACwACMjAACgACMjEAAAACMjIAAAACMjMAAAACMjQAAAACMjUAAAAIJGltcG9ydHMBcAEaGgkgAQBBAAsaAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkALwlwcm9kdWNlcnMBDHByb2Nlc3NlZC1ieQENd2l0LWNvbXBvbmVudAcwLjI1Mi4w');
     const instanceFlags0 = new WebAssembly.Global({ value: "i32", mutable: true }, 1);
     INSTANCE_FLAGS.set(0, instanceFlags0);
     let _initTaskID0;
@@ -13724,9 +13944,10 @@ const $init = (() => {
           '[task-return]genesis': Object.assign(exports0['8'], { _jcoMaySuspend: false }),
           '[task-return]pack-schema-hash': Object.assign(exports0['11'], { _jcoMaySuspend: false }),
           '[task-return]print-mirror': Object.assign(exports0['10'], { _jcoMaySuspend: false }),
+          '[task-return]replay-envelopes': Object.assign(exports0['12'], { _jcoMaySuspend: false }),
         },
         '[export]semio:framework/describe@1.0.0': {
-          '[task-return]describe': Object.assign(exports0['15'], { _jcoMaySuspend: false }),
+          '[task-return]describe': Object.assign(exports0['16'], { _jcoMaySuspend: false }),
         },
         '[export]semio:framework/jobs@1.0.0': {
           '[task-return]cancel-job': Object.assign(_guardMayLeave(0, trampoline3), { _jcoMaySuspend: false }),
@@ -13735,16 +13956,16 @@ const $init = (() => {
           '[task-return]take-segmented-download-chunk': Object.assign(exports0['7'], { _jcoMaySuspend: false }),
         },
         '[export]semio:framework/reactor@1.0.0': {
-          '[task-return]poll': Object.assign(exports0['12'], { _jcoMaySuspend: false }),
-          '[task-return]stage-cold-pair-page': Object.assign(exports0['14'], { _jcoMaySuspend: false }),
-          '[task-return]stage-command-page': Object.assign(exports0['13'], { _jcoMaySuspend: false }),
+          '[task-return]poll': Object.assign(exports0['13'], { _jcoMaySuspend: false }),
+          '[task-return]stage-cold-pair-page': Object.assign(exports0['15'], { _jcoMaySuspend: false }),
+          '[task-return]stage-command-page': Object.assign(exports0['14'], { _jcoMaySuspend: false }),
         },
         'semio:framework/pure@1.0.0': {
           log: Object.assign(exports0['1'], { _jcoMaySuspend: false }),
           'now-ms': Object.assign(trampoline1, { _jcoMaySuspend: false }),
         },
         'wasi:cli/environment@0.2.0': {
-          'get-environment': Object.assign(exports0['20'], { _jcoMaySuspend: false }),
+          'get-environment': Object.assign(exports0['21'], { _jcoMaySuspend: false }),
         },
         'wasi:cli/exit@0.2.0': {
           exit: Object.assign(trampoline13, { _jcoMaySuspend: false }),
@@ -13765,20 +13986,20 @@ const $init = (() => {
           '[resource-drop]terminal-output': Object.assign(_guardMayLeave(0, trampoline12), { _jcoMaySuspend: false }),
         },
         'wasi:cli/terminal-stderr@0.2.0': {
-          'get-terminal-stderr': Object.assign(exports0['23'], { _jcoMaySuspend: false }),
+          'get-terminal-stderr': Object.assign(exports0['24'], { _jcoMaySuspend: false }),
         },
         'wasi:cli/terminal-stdin@0.2.0': {
-          'get-terminal-stdin': Object.assign(exports0['21'], { _jcoMaySuspend: false }),
+          'get-terminal-stdin': Object.assign(exports0['22'], { _jcoMaySuspend: false }),
         },
         'wasi:cli/terminal-stdout@0.2.0': {
-          'get-terminal-stdout': Object.assign(exports0['22'], { _jcoMaySuspend: false }),
+          'get-terminal-stdout': Object.assign(exports0['23'], { _jcoMaySuspend: false }),
         },
         'wasi:clocks/monotonic-clock@0.2.0': {
           now: Object.assign(trampoline19, { _jcoMaySuspend: false }),
           'subscribe-duration': Object.assign(trampoline20, { _jcoMaySuspend: false }),
         },
         'wasi:clocks/wall-clock@0.2.0': {
-          now: Object.assign(exports0['24'], { _jcoMaySuspend: false }),
+          now: Object.assign(exports0['25'], { _jcoMaySuspend: false }),
         },
         'wasi:io/error@0.2.0': {
           '[resource-drop]error': Object.assign(_guardMayLeave(0, trampoline7), { _jcoMaySuspend: false }),
@@ -13786,13 +14007,13 @@ const $init = (() => {
         'wasi:io/poll@0.2.0': {
           '[method]pollable.block': Object.assign(trampoline14, { _jcoMaySuspend: false }),
           '[resource-drop]pollable': Object.assign(_guardMayLeave(0, trampoline8), { _jcoMaySuspend: false }),
-          poll: Object.assign(exports0['16'], { _jcoMaySuspend: false }),
+          poll: Object.assign(exports0['17'], { _jcoMaySuspend: false }),
         },
         'wasi:io/streams@0.2.0': {
-          '[method]output-stream.blocking-flush': Object.assign(exports0['19'], { _jcoMaySuspend: false }),
-          '[method]output-stream.check-write': Object.assign(exports0['17'], { _jcoMaySuspend: false }),
+          '[method]output-stream.blocking-flush': Object.assign(exports0['20'], { _jcoMaySuspend: false }),
+          '[method]output-stream.check-write': Object.assign(exports0['18'], { _jcoMaySuspend: false }),
           '[method]output-stream.subscribe': Object.assign(trampoline15, { _jcoMaySuspend: false }),
-          '[method]output-stream.write': Object.assign(exports0['18'], { _jcoMaySuspend: false }),
+          '[method]output-stream.write': Object.assign(exports0['19'], { _jcoMaySuspend: false }),
           '[resource-drop]input-stream': Object.assign(_guardMayLeave(0, trampoline9), { _jcoMaySuspend: false }),
           '[resource-drop]output-stream': Object.assign(_guardMayLeave(0, trampoline10), { _jcoMaySuspend: false }),
         },
@@ -13819,20 +14040,21 @@ const $init = (() => {
           '1': Object.assign(trampoline22, { _jcoMaySuspend: false }),
           '10': Object.assign(_guardMayLeave(0, trampoline29), { _jcoMaySuspend: false }),
           '11': Object.assign(_guardMayLeave(0, trampoline25), { _jcoMaySuspend: false }),
-          '12': Object.assign(_guardMayLeave(0, trampoline30), { _jcoMaySuspend: false }),
-          '13': Object.assign(_guardMayLeave(0, trampoline24), { _jcoMaySuspend: false }),
+          '12': Object.assign(_guardMayLeave(0, trampoline28), { _jcoMaySuspend: false }),
+          '13': Object.assign(_guardMayLeave(0, trampoline30), { _jcoMaySuspend: false }),
           '14': Object.assign(_guardMayLeave(0, trampoline24), { _jcoMaySuspend: false }),
-          '15': Object.assign(_guardMayLeave(0, trampoline31), { _jcoMaySuspend: false }),
-          '16': Object.assign(trampoline32, { _jcoMaySuspend: false }),
-          '17': Object.assign(trampoline33, { _jcoMaySuspend: false }),
-          '18': Object.assign(trampoline34, { _jcoMaySuspend: false }),
-          '19': Object.assign(trampoline35, { _jcoMaySuspend: false }),
+          '15': Object.assign(_guardMayLeave(0, trampoline24), { _jcoMaySuspend: false }),
+          '16': Object.assign(_guardMayLeave(0, trampoline31), { _jcoMaySuspend: false }),
+          '17': Object.assign(trampoline32, { _jcoMaySuspend: false }),
+          '18': Object.assign(trampoline33, { _jcoMaySuspend: false }),
+          '19': Object.assign(trampoline34, { _jcoMaySuspend: false }),
           '2': Object.assign(_guardMayLeave(0, trampoline23), { _jcoMaySuspend: false }),
-          '20': Object.assign(trampoline36, { _jcoMaySuspend: false }),
-          '21': Object.assign(trampoline37, { _jcoMaySuspend: false }),
-          '22': Object.assign(trampoline38, { _jcoMaySuspend: false }),
-          '23': Object.assign(trampoline39, { _jcoMaySuspend: false }),
-          '24': Object.assign(trampoline40, { _jcoMaySuspend: false }),
+          '20': Object.assign(trampoline35, { _jcoMaySuspend: false }),
+          '21': Object.assign(trampoline36, { _jcoMaySuspend: false }),
+          '22': Object.assign(trampoline37, { _jcoMaySuspend: false }),
+          '23': Object.assign(trampoline38, { _jcoMaySuspend: false }),
+          '24': Object.assign(trampoline39, { _jcoMaySuspend: false }),
+          '25': Object.assign(trampoline40, { _jcoMaySuspend: false }),
           '3': Object.assign(_guardMayLeave(0, trampoline24), { _jcoMaySuspend: false }),
           '4': Object.assign(_guardMayLeave(0, trampoline25), { _jcoMaySuspend: false }),
           '5': Object.assign(_guardMayLeave(0, trampoline26), { _jcoMaySuspend: false }),
@@ -13866,6 +14088,7 @@ const $init = (() => {
     codec100Genesis = WebAssembly.promising(exports1['[async-lift]semio:framework/codec@1.0.0#genesis']);
     codec100PrintMirror = WebAssembly.promising(exports1['[async-lift]semio:framework/codec@1.0.0#print-mirror']);
     codec100ApplyOps = WebAssembly.promising(exports1['[async-lift]semio:framework/codec@1.0.0#apply-ops']);
+    codec100ReplayEnvelopes = WebAssembly.promising(exports1['[async-lift]semio:framework/codec@1.0.0#replay-envelopes']);
   })();
   let promise, resolve, reject;
   function normalizeInstantiationError (e) {
@@ -13912,6 +14135,7 @@ const codec100 = {
   genesis: genesis,
   packSchemaHash: packSchemaHash,
   printMirror: printMirror,
+  replayEnvelopes: replayEnvelopes,
   
 };
 const describe100 = {

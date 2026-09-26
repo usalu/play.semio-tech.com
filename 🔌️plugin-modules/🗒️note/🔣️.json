@@ -119,9 +119,9 @@
     "appChannelVersion": 17
   },
   "hashes": {
-    "coreWasmSha256": "d0cb2418dd8a2ea9bbdbf6f31b79eda9cd405fd0a50068c39625924267f040db",
-    "descriptorSha256": "691d33da5f2fdf08cc4b195a5c3b6f02cdf49bd5687c844117eb89bbf32b462c",
-    "wasmSha256": "acfaf5802eae15dbede033de478c48760ce02bb2c7ad531108de8bfbf0138326"
+    "coreWasmSha256": "7da486e28e411fcda57f50c1bd9bfd28aa9e64f04e93513e0cdb2db465de0084",
+    "descriptorSha256": "1bdf03de1a5ed98c2e16f0daca2ac1b1b13910abaee12effbccdc91af952e5b7",
+    "wasmSha256": "70640810ce10db1d82a54ca2ff05676fbf71e7cb53007aa933e3e056e87600e2"
   },
   "manifest": {
     "apps": [
@@ -610,7 +610,7 @@
                 }
               },
               "effects": {
-                "destructive": false,
+                "destructive": true,
                 "external": false,
                 "reversible": false
               },
@@ -626,7 +626,7 @@
                 }
               },
               "policy": {
-                "approval": "never",
+                "approval": "whenDestructive",
                 "scopes": [
                   "shell.navigate"
                 ]
@@ -3924,11 +3924,11 @@
                 "kind": "interaction",
                 "label": {
                   "native": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   },
                   "reuse": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   }
                 },
@@ -4743,11 +4743,11 @@
                 "kind": "interaction",
                 "label": {
                   "native": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   },
                   "reuse": {
-                    "de": "Hover",
+                    "de": "Darüberfahren",
                     "en": "Hover"
                   }
                 },
