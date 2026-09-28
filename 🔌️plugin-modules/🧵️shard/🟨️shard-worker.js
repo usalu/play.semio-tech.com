@@ -580,6 +580,17 @@ self.addEventListener("message", async (event) => {
         await actor.api.restore(msg.state);
         reply(requestId, undefined);
         break;
+      case "codec": {
+        if (actor.activationGeneration !== msg.activationGeneration) throw new Error("actor-lifecycle.activation-mismatch");
+        if (inFlightTurnActors.has(actorId)) throw new Error(`shard worker: actor ${actorId} already has a turn in flight`);
+        inFlightTurnActors.add(actorId);
+        try {
+          reply(requestId, await actor.api.codec(msg.request), undefined, beat("turn-step"));
+        } finally {
+          inFlightTurnActors.delete(actorId);
+        }
+        break;
+      }
       case "frame": {
         if (actor.activationGeneration !== msg.activationGeneration) throw new Error("actor-lifecycle.activation-mismatch");
         const result = interpretFrame(msg.frame, actorId);
